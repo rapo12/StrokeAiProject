@@ -2,6 +2,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 st.set_page_config(page_title='Projet Ai', page_icon=':bar_chart:', layout='wide')
 data_balanced = pd.read_csv("data/data_balanced.csv")
@@ -22,6 +23,34 @@ def print_statistic(variablename):
     st.table(summary_table)
     # st.write("seceond display")
     # st.dataframe(summary_table)
+def interprétation_per_variable(variablename):
+    st.subheader("Interprétation : ")
+    if variablename == "age":
+        st.write(
+            "Les graphes montrent que la densité des personnes âgées de 50 ans et plus subissant un AVC est plus élevée.")
+    elif variablename == "bmi":
+        st.write("Les graphes montrent que la densité des personnes en surpoids qui ont subi un AVC est plus élevée.")
+    else:
+        st.write(
+            "Les graphes montrent que la densité des personnes avec un taux de glucose inférieur à 100 a subi davantage l'AVC.")
+def plot_variable_quanti(variablename):
+    interprétation_per_variable(variablename)
+    fig = px.histogram(data_balanced, x=variablename, color='stroke_c', nbins=30,
+                       opacity=0.5, marginal='violin',
+                       title=variablename.title()+' bar Plot')
+    fig2 = px.histogram(data_balanced, x=variablename, color='stroke_c',
+                        nbins=30, opacity=0.5,
+                        marginal='rug', barmode='overlay',
+                        title=variablename.title()+' Bar Plot',
+                        color_discrete_sequence=['#1f77b4', '#ff7f0e'])
+    fig3 = px.box(data_balanced, x='stroke_c', y=variablename, color='stroke_c',
+                 title=variablename.title()+' Box Plot', points='all')
+
+    st.plotly_chart(fig)
+    st.plotly_chart(fig2)
+    st.plotly_chart(fig3)
+
+
 
 if st.sidebar.selectbox("Select an option", ["Analyse exploratoire", "Densités conditionnelles"]) == "Analyse exploratoire":
     ##Streamlit code:
@@ -39,3 +68,4 @@ else:
     variable = st.sidebar.selectbox(
         "Veuillez parcourir les variables une par une pour voir l'efféctif de chaque classe de la variable choisie:",
         ["age", "bmi", "avg_glucose_level"])
+    plot_variable_quanti(variable)
