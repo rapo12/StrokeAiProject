@@ -59,19 +59,15 @@ def plot_pie(column_name):
     plt.title('Pie_' + column_name)
     st.pyplot()
 
-if st.sidebar.selectbox("Select an option", ["Analyse exploratoire", "Densités conditionnelles"]) == "Analyse exploratoire":
+if st.sidebar.selectbox("Select an option", ["Variables quantitatives", "Variables qualitatives"]) == "Variables quantitatives":
     ##Streamlit code:
-    st.title("Analyse exploratoire des variables qualitatives")
-    column_name = st.sidebar.selectbox(
-        "Veuillez parcourir les variables une par une pour voir l'efféctif de chaque classe de la variable choisie:",
-        ["gender", "hypertension", "heart_disease", "ever_married", "work_type", "Residence_type", "smoking_status",
-         "stroke"])
-
-
+    st.title("Représentation graphique de Variables quantitatives")
+    st.subheader("Interprétation:")
+    st.write("On remarque que ya des valeurs inférieurs à 1 pour l'âge, cela revient à l'interpretation des mois par des valeurs réelles positives. En ce qui concerne la distribution de chaque variable, le niveau moyen de glucose et l'indice de masse corporelle (bmi) semblent être normallement distribuées contrairement à lâge des patients.")
+    variable =st.sidebar.selectbox("Veuillez parcourir les variables une par une:", ["age", "bmi","avg_glucose_level"])
+    plot_count(variable)
 else:
     ##Streamlit code:
     st.title("Représentation graphique de variables qualitatives")
-    variable = st.sidebar.selectbox(
-        "Veuillez parcourir les variables une par une pour voir l'efféctif de chaque classe de la variable choisie:",
-        ["age", "bmi", "avg_glucose_level"])
-
+    column_name=st.sidebar.selectbox("Veuillez parcourir les variables une par une", ["gender", "hypertension","heart_disease","ever_married","work_type","Residence_type","smoking_status","stroke"])
+    plot_histogram2(column_name)
