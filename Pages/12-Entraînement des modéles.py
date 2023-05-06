@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import pickle
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
@@ -105,6 +106,11 @@ def train_model_and_show_matrix(model):
         plt.savefig("confusion_matrix_knn.png")
         # Display the plot in the Streamlit app
         st.image("confusion_matrix_knn.png")
+        # Saving a model with pickle
+
+
+        # Save an existing model to file
+        pickle.dump(model, open("model/Knn_save.pkl", "wb"))
     #####################################
     st.text_input("accuracy_"+modelname, value=accuracy_label, key="accuracy_"+accuracy_label, disabled=True)
     st.text_input("fsc_"+modelname, value=fsc_label, key="fsc_"+accuracy_label, disabled=True)
