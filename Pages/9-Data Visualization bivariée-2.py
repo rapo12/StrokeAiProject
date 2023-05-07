@@ -57,7 +57,7 @@ var=st.sidebar.selectbox("Select an option", ["BiVariables quantitatives", "BiVa
 if var == "BiVariables quantitatives":
     ##Streamlit code:
     st.title("Analyse bivarariée entre deux variables quantitatives")
-    st.write("Du plot de densités conditionnelles de variables quantitatives, on a remarqué que l'AVC depend fortement de l'age. Dans cette rebrique, on calcule la corrélation qui est entre les différentes variables quantitatives deux à deux: age, avg_glucose_level et bmi.")
+    st.write("En observant le graphique des densités conditionnelles des variables quantitatives, il est clair que l'âge a une forte influence sur la survenue d'un AVC. Dans cette section, nous calculons la corrélation entre les différentes paires de variables quantitatives suivantes : âge, taux moyen de glucose dans le sang et indice de masse corporelle (IMC).")
     variable_x =st.sidebar.selectbox("Veuillez choisir deux variables quantitatives différentes:", ["age", "bmi","avg_glucose_level"])
     variable_y =st.sidebar.selectbox("Sélectionner la deuxième", ["age", "bmi","avg_glucose_level"])
     render_nuage_points(variable_x,variable_y)

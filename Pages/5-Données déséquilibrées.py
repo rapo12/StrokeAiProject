@@ -14,7 +14,7 @@ strock_count=counts["stroke"]
 
 st.set_page_config(page_title='Projet Ai', page_icon=':bar_chart:', layout='wide')
 st.title("Problème de données déséquilibrées")
-st.write("Notre jeu de données est déséquilibrées comme suit:")
+st.write("Le jeu de données est déséquilibrées comme suit:")
 
 
 

@@ -63,7 +63,7 @@ if st.sidebar.selectbox("Select an option", ["Variables quantitatives", "Variabl
     ##Streamlit code:
     st.title("Représentation graphique de Variables quantitatives")
     st.subheader("Interprétation:")
-    st.write("On remarque que ya des valeurs inférieurs à 1 pour l'âge, cela revient à l'interpretation des mois par des valeurs réelles positives. En ce qui concerne la distribution de chaque variable, le niveau moyen de glucose et l'indice de masse corporelle (bmi) semblent être normallement distribuées contrairement à lâge des patients.")
+    st.write("Il est observé que certaines valeurs d'âge sont inférieures à 1, ce qui s'explique par l'interprétation des mois en tant que valeurs réelles positives. En ce qui concerne la répartition de chaque variable, il semble que le niveau moyen de glucose et l'indice de masse corporelle (IMC) suivent une distribution normale, contrairement à l'âge des patients qui ne semble pas suivre cette distribution.")
     variable =st.sidebar.selectbox("Veuillez parcourir les variables une par une:", ["age", "bmi","avg_glucose_level"])
     plot_count(variable)
 else:
