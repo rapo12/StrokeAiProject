@@ -15,7 +15,7 @@ st.image(image, caption='Sunrise over mountains', use_column_width=True)
 st.title("Mini-Projet en intelligence artificielle")
 st.header("Prédiction d'AVC (Accident vasculaire cérébral)")
 
-st.subheader("Réalisé par:")
+st.subheader("Réalisé par :")
 st.subheader("Samir Ait Bou")
 st.subheader("Encadré par :")
 st.subheader("Imad ZEROUAL")
