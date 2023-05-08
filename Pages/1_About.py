@@ -19,5 +19,5 @@ st.subheader("Réalisé par :")
 st.subheader("Samir Ait Bou")
 st.subheader("Encadré par :")
 st.subheader("Imad ZEROUAL")
-st.text("Présente le : 08/05/2023")
+st.text("Présente le : 08/05/2023.")
 
