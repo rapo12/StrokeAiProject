@@ -15,7 +15,7 @@ st.image(image, caption='Sunrise over mountains', use_column_width=True)
 st.title("Mini-Projet en Machine Learning")
 st.header("Prédiction d'AVC (Accident vasculaire cérébral)")
 
-st.subheader("Réalisé par :")
+st.subheader("Réalisé par : ")
 st.subheader("Najat AIT AHMED - Ayoub FACH - Rayhan EL HOUCHET")
 st.subheader("Encadré par :")
 st.subheader("Abd Elkarim Mouatasim")
