@@ -7,17 +7,17 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Load image from file
-image = Image.open(os.path.join(BASE_DIR, 'umi_logo.png'))
+image = Image.open(os.path.join(BASE_DIR, 'FP-Ouarzazat.png'))
 # Display the image
 st.image(image, caption='Sunrise over mountains', use_column_width=True)
 
 
-st.title("Mini-Projet en intelligence artificielle")
+st.title("Mini-Projet en Machine Learning")
 st.header("Prédiction d'AVC (Accident vasculaire cérébral)")
 
 st.subheader("Réalisé par :")
-st.subheader("Samir Ait Bou")
+st.subheader("Najat AIT AHMED - Ayoub FACH - Rayhan EL HOUCHET")
 st.subheader("Encadré par :")
-st.subheader("Imad ZEROUAL")
-st.text("Présente le : 08/05/2023.")
+st.subheader("Abd Elkarim Mouatasim")
+
 
